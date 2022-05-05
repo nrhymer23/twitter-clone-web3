@@ -1,4 +1,5 @@
 import { BsStar, BsStars } from "react-icons/bs"
+import TweetBox from './Tweetbox'
 
 
 const style = {
@@ -14,6 +15,7 @@ function Feed (){
                 <div className={style.headerTitle}>Home</div>
                 <BsStars />
             </div>
+                <TweetBox />
         </div>
     )
 }
