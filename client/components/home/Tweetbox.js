@@ -43,7 +43,7 @@ const TweetBox = () => {
               className={style.inputField}
               placeholder="Whats New?"
               value={tweetMessage}
-              onchange={(e) => setTweetMessage(e.target.value)}
+              onChange={(e) => setTweetMessage(e.target.value)}
             />
             <div className={style.formLowerContainer}>
               <div className={style.iconsContainer}>
