@@ -1,5 +1,5 @@
 import { BsStar, BsStars } from "react-icons/bs"
-import TweetBox from './Tweetbox'
+import TweetBox from "./TweetBox"
 
 
 const style = {

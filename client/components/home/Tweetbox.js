@@ -1,8 +1,9 @@
-import { useState  } from 'react'
+import { React} from 'react'
+import { useState } from 'react'
 import { BsCardImage, BsEmojiSmile } from 'react-icons/bs'
 import { RiFileGifLine, RiBarChartHorizontalFill } from 'react-icons/ri'
 import { IoMdCalendar } from 'react-icons/io'
-import { MdOutlineLocation } from 'react-icons/md'
+import { MdOutlineLocation, MdOutlineLocationOn } from 'react-icons/md'
 
 const style = {
     wrapper: `px-4 flex flex-row border-b border-[#38444d] pb-4`,
@@ -18,7 +19,7 @@ const style = {
     activeSubmit:`bg-[#1d9bf0] text-white`,
 }
 
-const Tweetbox = () => {
+const TweetBox = () => {
 
     const [tweetMessage, setTweetMessage] = useState('')
 
@@ -51,7 +52,7 @@ const Tweetbox = () => {
                 <RiBarChartHorizontalFill className={style.icon} />
                 <BsEmojiSmile className={style.icon} />
                 <IoMdCalendar className={style.icon} />
-                <MdOutlineLocation className={style.icon} />
+                <MdOutlineLocationOn className={style.icon} />
               </div>
               <button 
                 type ="submit" 
@@ -70,4 +71,4 @@ const Tweetbox = () => {
   )
 }
 
-export default Tweetbox
+export default TweetBox
