@@ -5,6 +5,7 @@ import { RiFileGifLine, RiBarChartHorizontalFill } from 'react-icons/ri'
 import { IoMdCalendar } from 'react-icons/io'
 import { MdOutlineLocation, MdOutlineLocationOn } from 'react-icons/md'
 
+
 const style = {
     wrapper: `px-4 flex flex-row border-b border-[#38444d] pb-4`,
     tweetBoxLeft:`mr-4`,
@@ -32,7 +33,7 @@ const TweetBox = () => {
    <div className={style.wrapper}>
       <div className={style.tweetBoxLeft}>
         <img 
-          src=""
+          src="https://styles.redditmedia.com/t5_p1dzz/styles/profileIcon_snoo638d3952-d77f-4d45-a177-9385529392ae-headshot.png?width=256&height=256&frame=1&crop=256:256,smart&s=f30361572ad5c50dfd6514958e0e4507ee50688d"
           alt="profile image"
           className={style.profileImage}
           />
