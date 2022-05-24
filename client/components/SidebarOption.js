@@ -1,4 +1,4 @@
-
+import { useRouter } from 'next/router'
 
 const style = {
     wrapper: `w-min flex items-center rounded-[100px] p-4 cursor-pointer hover:bg-[#333c45] transition-all hover:duration-200 hover:ease-in-out `,
@@ -9,11 +9,13 @@ const style = {
 
 
 function SidebarOption({ text, Icon, isActive, setSelected, redirect }) {
+    const router = useRouter()
     return(
         <div
             className={style.wrapper}
             onClick={()=> {
                 setSelected(text)
+                router.push(redirect) // goes to next page 
             }}
         >
         <div className={style.iconContainer}>

@@ -9,6 +9,7 @@ import {HiOutlineMail, HiMail} from 'react-icons/hi'
 import {FaRegListAlt, FaHashtag, FaBell} from 'react-icons/fa'
 import {BsBookmark, BsBookmarkFill, BsPerson, BsPersonFill} from 'react-icons/bs'
 import {CgMoreO} from 'react-icons/cg'
+import Link from 'next/link'
 
 
 
