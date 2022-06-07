@@ -1,22 +1,30 @@
-//SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
 
-import "hardhat/console.sol";
+pragma solidity ^0.8.2;
 
-contract Greeter {
-    string private greeting;
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol"; 
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
-    constructor(string memory _greeting) {
-        console.log("Deploying a Greeter with greeting:", _greeting);
-        greeting = _greeting;
+contract ProfileImageNfts is ERC721, Ownable {
+    using Counters for Counters.Counter;
+    using Strings for unit256;
+
+    Counters.Counter _tokenIds;
+
+    mapping(uint256 => string) _tokenIds;
+
+    struct RenderToken {
+        uint256 id;
+        string uri;
+        string space;
     }
 
-    function greet() public view returns (string memory) {
-        return greeting;
+    constructor() ERC721("ProfileImageNfts", "PIN") {}
+
+    function _setTokenURI (unit256 tokenId, string memory _tokenURI) internal {
+        _tokenURIs[tokenId] = _tokenURI;
     }
 
-    function setGreeting(string memory _greeting) public {
-        console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
-        greeting = _greeting;
-    }
+    function tokenURI(unit256 tokenId) public view virtual override returns (string memory)
 }
