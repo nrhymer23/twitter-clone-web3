@@ -8,11 +8,11 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract ProfileImageNfts is ERC721, Ownable {
     using Counters for Counters.Counter;
-    using Strings for unit256;
+    using Strings for uint256;
 
     Counters.Counter _tokenIds;
 
-    mapping(uint256 => string) _tokenIds;
+    mapping(uint256 => string) _tokenURIs;
 
     struct RenderToken {
         uint256 id;
@@ -22,20 +22,20 @@ contract ProfileImageNfts is ERC721, Ownable {
 
     constructor() ERC721("ProfileImageNfts", "PIN") {}
 
-    function _setTokenURI (unit256 tokenId, string memory _tokenURI) internal {
+    function _setTokenURI (uint256 tokenId, string memory _tokenURI) internal {
         _tokenURIs[tokenId] = _tokenURI;
     }
 
-    function tokenURI(unit256 tokenId) public view virtual override returns (string memory){
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory){
     require(_exists(tokenId),"URI does not exist on that ID");
     string memory _RUri = _tokenURIs[tokenId];
     return _RUri;
 }
 
     function getALLtoken() public view returns (RenderToken[] memory) {
-        uint256[] lastesId = tokenIds.current();
-        RenderToken[] memory res = new RenderToken[](lastestId);
-        for(uint256 i = 0; i <=lastestId; i++){
+        uint256 latestId = _tokenIds.current();
+        RenderToken[] memory res = new RenderToken[](latestId);
+        for(uint256 i = 0; i <=latestId; i++){
             if(_exists(i)){
             string memory uri = tokenURI(i);
             res[i]=RenderToken(i, uri, " ");
