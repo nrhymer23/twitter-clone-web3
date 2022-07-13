@@ -7,19 +7,18 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const profileImageMinterFactory = await hre.ethers.getContractFactory("profileImageMinterFactory");
+  const profileImageContract = await profileImageMinterFactory.deploy("Hello, Hardhat!");
 
-  await greeter.deployed();
+  await profileImageContract.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  console.log("Profile image Minter deployed to:", profileImageContract.address);
 }
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+;async () => {
+  try {
+    await main()
+  }catch (error) {
+    console.error(error)
+    process.exit(1)
+  }
+}
